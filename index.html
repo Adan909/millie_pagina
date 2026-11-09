@@ -1,0 +1,1585 @@
+
+<div id="fisica-medica">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+
+#fisica-medica{
+ --sky:#c7e0e6;
+ --sky2:#e4f0f1;
+ --blue:#6f98a4;
+ --blue-dark:#456c78;
+ --cream:#fffaf2;
+ --paper:#fffdf8;
+ --brown:#74513e;
+ --brown2:#a47b60;
+ --ink:#493b34;
+ --muted:#7d6d62;
+ --line:#dfcbb8;
+ --pink:#ead2c8;
+ font-family:'DM Sans',sans-serif;
+ color:var(--ink);
+ line-height:1.75;
+ max-width:1120px;
+ margin:20px auto;
+ padding:22px;
+ border-radius:22px;
+ background-color:#dcebf0;
+ background-image:radial-gradient(circle,#9fc4ce 2px,transparent 2.5px);
+ background-size:23px 23px;
+ box-sizing:border-box;
+}
+
+#fisica-medica *{box-sizing:border-box}
+
+#fisica-medica h1,#fisica-medica h2,#fisica-medica h3{
+ font-family:'Playfair Display',serif;
+ color:var(--brown);
+ line-height:1.25;
+}
+
+#fisica-medica p{margin:12px 0}
+#fisica-medica a{color:var(--blue-dark)}
+
+#fisica-medica .hero{
+ background:var(--cream);
+ border:1px solid #d9c4b0;
+ border-radius:20px;
+ text-align:center;
+ padding:48px 22px;
+ box-shadow:7px 7px 0 rgba(116,81,62,.16);
+ position:relative;
+ overflow:hidden;
+}
+
+#fisica-medica .hero:before,
+#fisica-medica .hero:after{
+ content:"";
+ position:absolute;
+ width:100px;height:100px;
+ border-radius:50%;
+ background-image:radial-gradient(var(--sky) 3px,transparent 3.5px);
+ background-size:17px 17px;
+ opacity:.8;
+}
+
+#fisica-medica .hero:before{left:-22px;top:-25px}
+#fisica-medica .hero:after{right:-22px;bottom:-25px}
+
+#fisica-medica .overline{
+ letter-spacing:3px;
+ font-size:11px;
+ font-weight:700;
+ color:var(--blue-dark);
+}
+
+#fisica-medica .hero h1{
+ font-family:'Cormorant Garamond',serif;
+ font-size:clamp(42px,8vw,76px);
+ letter-spacing:3px;
+ margin:10px 0 0;
+}
+
+#fisica-medica .hero .subtitle{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(15px,3vw,21px);
+ color:var(--blue-dark);
+ margin:4px auto 16px;
+}
+
+#fisica-medica .hero .motto{
+ font-family:'Cormorant Garamond',serif;
+ font-size:21px;
+ font-style:italic;
+ max-width:650px;
+ margin:15px auto;
+}
+
+#fisica-medica .pill{
+ display:inline-block;
+ border:1px solid #b6d1d8;
+ background:var(--sky2);
+ color:var(--blue-dark);
+ border-radius:30px;
+ padding:5px 13px;
+ font-size:11px;
+ letter-spacing:1px;
+ font-weight:700;
+ margin:4px;
+}
+
+#fisica-medica .menu{
+ position:sticky;
+ top:5px;
+ z-index:20;
+ background:rgba(255,250,242,.97);
+ border:1px solid var(--line);
+ border-radius:14px;
+ padding:10px;
+ margin:22px 0;
+ display:flex;
+ flex-wrap:wrap;
+ justify-content:center;
+ gap:7px;
+ box-shadow:0 4px 12px rgba(75,55,42,.08);
+}
+
+#fisica-medica .menu a{
+ display:inline-block;
+ text-decoration:none;
+ background:var(--sky2);
+ color:var(--blue-dark);
+ border:1px solid #c2dce1;
+ padding:8px 12px;
+ border-radius:20px;
+ font-size:12px;
+ font-weight:700;
+ transition:.2s;
+}
+
+#fisica-medica .menu a:hover{
+ background:var(--blue-dark);
+ color:white;
+ transform:translateY(-2px);
+}
+
+#fisica-medica .section{
+ background:var(--paper);
+ border:1px solid var(--line);
+ border-radius:17px;
+ padding:26px;
+ margin:22px 0;
+ box-shadow:4px 5px 0 rgba(116,81,62,.10);
+ scroll-margin-top:100px;
+}
+
+#fisica-medica .section h2{font-size:29px;margin:5px 0 14px}
+#fisica-medica .section h3{font-size:21px;margin:24px 0 8px}
+
+#fisica-medica .kicker{
+ color:var(--blue);
+ font-size:12px;
+ letter-spacing:2px;
+ font-weight:700;
+}
+
+#fisica-medica .lead{
+ font-family:'Playfair Display',serif;
+ font-size:18px;
+ color:#665247;
+}
+
+#fisica-medica .callout{
+ background:var(--sky2);
+ border-left:5px solid var(--blue);
+ border-radius:9px;
+ padding:15px 18px;
+ margin:17px 0;
+}
+
+#fisica-medica .callout.brown{
+ background:#f5ebe1;
+ border-left-color:var(--brown2);
+}
+
+#fisica-medica .grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:14px;
+ margin:18px 0;
+}
+
+#fisica-medica .card{
+ background:#f8f2e9;
+ border:1px solid #e1cdbb;
+ border-radius:13px;
+ padding:17px;
+}
+
+#fisica-medica .card.blue{
+ background:#edf5f5;
+ border-color:#c6dce0;
+}
+
+#fisica-medica .card h3{margin:0 0 8px;font-size:19px}
+#fisica-medica .card p{font-size:14px}
+
+#fisica-medica .number{
+ font-family:'Cormorant Garamond',serif;
+ font-size:29px;
+ color:var(--blue);
+ font-weight:700;
+}
+
+#fisica-medica .profile{
+ display:flex;
+ gap:22px;
+ align-items:center;
+ flex-wrap:wrap;
+}
+
+#fisica-medica .profile img{
+ width:160px;height:180px;object-fit:cover;
+ border-radius:12px;
+ border:5px solid #e6d5c4;
+ background:var(--sky2);
+}
+
+#fisica-medica .profile-text{flex:1;min-width:210px}
+
+#fisica-medica .signature{
+ font-family:'Cormorant Garamond',serif;
+ font-size:24px;
+ color:var(--brown2);
+ font-style:italic;
+}
+
+#fisica-medica .topic-list li{margin:8px 0}
+
+#fisica-medica .equation{
+ background:#f3eee6;
+ border:1px dashed #c5a88f;
+ border-radius:10px;
+ padding:13px;
+ text-align:center;
+ font-family:Georgia,serif;
+ font-size:19px;
+ color:#634936;
+ margin:14px 0;
+ overflow-wrap:anywhere;
+}
+
+#fisica-medica .table-wrap{overflow-x:auto}
+
+#fisica-medica table{
+ border-collapse:collapse;
+ width:100%;
+ min-width:480px;
+ font-size:14px;
+ margin:14px 0;
+}
+
+#fisica-medica th{
+ background:#dcebf0;
+ color:#365e69;
+ text-align:left;
+}
+
+#fisica-medica th,#fisica-medica td{
+ padding:11px;
+ border:1px solid #d9c8b8;
+}
+
+#fisica-medica tr:nth-child(even){background:#faf4eb}
+
+#fisica-medica .references li{
+ margin:13px 0;
+ overflow-wrap:anywhere;
+}
+
+#fisica-medica .footer{
+ text-align:center;
+ background:var(--cream);
+ border:1px solid var(--line);
+ border-radius:15px;
+ padding:23px;
+ margin-top:22px;
+ color:var(--brown);
+}
+
+#fisica-medica .footer strong{
+ font-family:'Cormorant Garamond',serif;
+ font-size:25px;
+}
+
+#fisica-medica .small{font-size:13px;color:var(--muted)}
+
+#fisica-medica details{
+ background:#f3f8f7;
+ border:1px solid #c7dce0;
+ border-radius:10px;
+ padding:12px 15px;
+ margin:10px 0;
+}
+
+#fisica-medica summary{
+ cursor:pointer;
+ color:var(--blue-dark);
+ font-weight:700;
+}
+
+#fisica-medica .backtop{
+ display:inline-block;
+ margin-top:10px;
+ font-size:12px;
+ text-decoration:none;
+ font-weight:700;
+}
+
+/* =================================
+   JUEGO: LA AVENTURA DE LOS PATITOS
+================================= */
+
+#fisica-medica .duck-game{
+ background:#fffaf2;
+ border:1px solid #d9c4b0;
+ border-radius:20px;
+ padding:20px;
+ margin-top:22px;
+ overflow:hidden;
+}
+
+#fisica-medica .game-heading{
+ text-align:center;
+ margin-bottom:18px;
+}
+
+#fisica-medica .game-heading h3{
+ font-family:'Cormorant Garamond',serif;
+ font-size:35px;
+ margin:5px 0;
+ color:#456c78;
+}
+
+#fisica-medica .game-heading p{
+ font-size:14px;
+ color:#7d6d62;
+}
+
+#fisica-medica .game-scoreboard{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ flex-wrap:wrap;
+ margin:18px 0;
+}
+
+#fisica-medica .game-stat{
+ background:#eaf3f3;
+ border:1px solid #c7dce0;
+ border-radius:12px;
+ padding:10px 15px;
+ color:#456c78;
+ font-weight:700;
+ font-size:13px;
+}
+
+#fisica-medica .stars-display{
+ font-size:20px;
+ letter-spacing:3px;
+}
+
+#fisica-medica .game-progress{
+ height:9px;
+ background:#e8dfd4;
+ border-radius:20px;
+ overflow:hidden;
+ margin:15px 0 22px;
+}
+
+#fisica-medica .game-progress-fill{
+ height:100%;
+ width:0%;
+ background:linear-gradient(90deg,#9fcbd0,#e6c98c);
+ border-radius:20px;
+ transition:width .5s ease;
+}
+
+/* EL LAGO */
+
+#fisica-medica .lake{
+ position:relative;
+ height:235px;
+ border-radius:17px;
+ overflow:hidden;
+ background:linear-gradient(
+  180deg,
+  #e4f1ed 0%,
+  #c8e4e3 35%,
+  #9fcbd1 36%,
+  #8ebbc6 100%
+ );
+ border:2px solid #c2dce1;
+ margin:15px 0 22px;
+}
+
+#fisica-medica .lake-sky{
+ position:absolute;
+ top:12px;
+ left:0;
+ width:100%;
+ text-align:center;
+ font-size:13px;
+ color:#668c8b;
+ letter-spacing:2px;
+}
+
+#fisica-medica .cloud{
+ position:absolute;
+ font-size:32px;
+ opacity:.65;
+ animation:cloudMove 9s ease-in-out infinite alternate;
+}
+
+#fisica-medica .cloud.one{left:9%;top:35px}
+#fisica-medica .cloud.two{right:12%;top:55px;animation-delay:2s}
+
+@keyframes cloudMove{
+ from{transform:translateX(-8px)}
+ to{transform:translateX(12px)}
+}
+
+#fisica-medica .water-wave{
+ position:absolute;
+ width:160%;
+ height:90px;
+ left:-30%;
+ bottom:-40px;
+ border-radius:45%;
+ background:rgba(255,255,255,.17);
+ animation:waveMove 5s linear infinite;
+}
+
+#fisica-medica .water-wave.two{
+ bottom:-52px;
+ animation-duration:7s;
+ animation-direction:reverse;
+ opacity:.7;
+}
+
+@keyframes waveMove{
+ from{transform:translateX(-5%) rotate(0deg)}
+ to{transform:translateX(5%) rotate(5deg)}
+}
+
+#fisica-medica .lily{
+ position:absolute;
+ bottom:35px;
+ font-size:65px;
+ line-height:1;
+ filter:drop-shadow(0 4px 2px rgba(40,90,90,.12));
+}
+
+#fisica-medica .lily.left{left:14%}
+#fisica-medica .lily.right{right:14%}
+
+#fisica-medica .duck-character{
+ position:absolute;
+ z-index:3;
+ left:50%;
+ bottom:48px;
+ transform:translateX(-50%);
+ font-size:76px;
+ line-height:1;
+ filter:drop-shadow(0 5px 3px rgba(50,70,70,.15));
+ transition:all .8s ease;
+ animation:duckFloat 2.4s ease-in-out infinite;
+}
+
+@keyframes duckFloat{
+ 0%,100%{margin-bottom:0;transform:translateX(-50%) rotate(-3deg)}
+ 50%{margin-bottom:8px;transform:translateX(-50%) rotate(3deg)}
+}
+
+#fisica-medica .duck-character.falling{
+ animation:duckFall 1.1s ease-in forwards;
+}
+
+@keyframes duckFall{
+ 0%{bottom:48px;transform:translateX(-50%) rotate(0deg)}
+ 45%{bottom:20px;transform:translateX(-50%) rotate(35deg)}
+ 100%{bottom:-85px;transform:translateX(-50%) rotate(90deg);opacity:.3}
+}
+
+#fisica-medica .duck-character.winner{
+ animation:duckWin .8s ease-in-out 2;
+}
+
+@keyframes duckWin{
+ 0%,100%{transform:translateX(-50%) translateY(0) rotate(0)}
+ 50%{transform:translateX(-50%) translateY(-22px) rotate(-10deg)}
+}
+
+#fisica-medica .duck-splash{
+ position:absolute;
+ z-index:4;
+ left:50%;
+ bottom:30px;
+ transform:translateX(-50%);
+ font-size:48px;
+ opacity:0;
+ pointer-events:none;
+}
+
+#fisica-medica .duck-splash.show{
+ animation:splash 1.1s ease forwards;
+}
+
+@keyframes splash{
+ 0%{opacity:0;transform:translateX(-50%) scale(.4)}
+ 35%{opacity:1;transform:translateX(-50%) scale(1.2)}
+ 100%{opacity:0;transform:translateX(-50%) scale(1)}
+}
+
+#fisica-medica .duck-message{
+ position:absolute;
+ top:95px;
+ left:0;
+ width:100%;
+ text-align:center;
+ font-family:'Playfair Display',serif;
+ color:#456c78;
+ font-size:15px;
+ font-weight:700;
+ z-index:2;
+}
+
+#fisica-medica .game-question{
+ background:#f5eee5;
+ border:1px solid #e0cdbb;
+ border-radius:15px;
+ padding:20px;
+ text-align:center;
+}
+
+#fisica-medica .round-label{
+ display:inline-block;
+ padding:6px 14px;
+ border-radius:25px;
+ background:#dcebf0;
+ color:#456c78;
+ font-weight:700;
+ font-size:11px;
+ letter-spacing:1.5px;
+}
+
+#fisica-medica .game-question h3{
+ font-family:'Playfair Display',serif;
+ font-size:20px;
+ margin:13px 0 18px;
+ color:#624b3e;
+}
+
+#fisica-medica .duck-options{
+ display:grid;
+ grid-template-columns:1fr;
+ gap:10px;
+}
+
+#fisica-medica .duck-option{
+ display:block;
+ width:100%;
+ border:1px solid #bfd7dc;
+ background:#edf5f5;
+ border-radius:12px;
+ padding:13px 15px;
+ text-align:left;
+ color:#456c78;
+ font:inherit;
+ font-size:14px;
+ cursor:pointer;
+ transition:.2s;
+}
+
+#fisica-medica .duck-option:hover:not(:disabled){
+ background:#dcebef;
+ border-color:#6f98a4;
+ transform:translateY(-2px);
+}
+
+#fisica-medica .duck-option:disabled{
+ cursor:default;
+ opacity:1;
+}
+
+#fisica-medica .duck-option.right{
+ background:#e4f1e4;
+ border:2px solid #80a987;
+ color:#365e3b;
+}
+
+#fisica-medica .duck-option.wrong{
+ background:#f6e6e1;
+ border:2px solid #c58d7d;
+ color:#864b40;
+}
+
+#fisica-medica .duck-feedback{
+ min-height:52px;
+ margin:15px 0 5px;
+ padding:10px;
+ border-radius:10px;
+ font-weight:700;
+ font-size:14px;
+}
+
+#fisica-medica .duck-feedback.success{
+ background:#e5f1e5;
+ color:#416b47;
+}
+
+#fisica-medica .duck-feedback.error{
+ background:#f6e6e1;
+ color:#865044;
+}
+
+#fisica-medica .game-button{
+ border:0;
+ border-radius:25px;
+ padding:12px 23px;
+ background:#456c78;
+ color:white;
+ font:inherit;
+ font-weight:700;
+ cursor:pointer;
+ transition:.2s;
+}
+
+#fisica-medica .game-button:hover{
+ background:#74513e;
+ transform:translateY(-2px);
+}
+
+#fisica-medica .game-button:disabled{
+ opacity:.45;
+ cursor:not-allowed;
+ transform:none;
+}
+
+#fisica-medica .game-button.secondary{
+ background:#ead9c8;
+ color:#74513e;
+}
+
+#fisica-medica .game-controls{
+ display:flex;
+ justify-content:center;
+ gap:10px;
+ flex-wrap:wrap;
+ margin:18px 0;
+}
+
+#fisica-medica .game-result{
+ display:none;
+ text-align:center;
+ padding:25px 15px;
+ background:#edf5f5;
+ border:1px solid #c5dce0;
+ border-radius:16px;
+ margin-top:18px;
+}
+
+#fisica-medica .game-result.show{
+ display:block;
+ animation:resultAppear .6s ease;
+}
+
+@keyframes resultAppear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+#fisica-medica .result-ducks{
+ font-size:38px;
+ letter-spacing:5px;
+ margin:15px 0;
+}
+
+#fisica-medica .result-stars{
+ font-size:42px;
+ letter-spacing:5px;
+ margin:12px 0;
+}
+
+#fisica-medica .result-title{
+ font-family:'Cormorant Garamond',serif;
+ font-size:34px;
+ color:#456c78;
+ font-weight:700;
+}
+
+#fisica-medica .game-instructions{
+ background:#f7eee4;
+ border:1px dashed #c9ac93;
+ border-radius:12px;
+ padding:13px 16px;
+ font-size:13px;
+ margin:18px 0;
+}
+
+@media(max-width:650px){
+ #fisica-medica{padding:10px;margin:8px auto}
+ #fisica-medica .section{padding:18px}
+ #fisica-medica .menu{position:relative;top:auto}
+ #fisica-medica .menu a{font-size:11px;padding:7px 9px}
+ #fisica-medica .profile{justify-content:center;text-align:center}
+ #fisica-medica .profile img{margin:auto}
+ #fisica-medica .lake{height:210px}
+ #fisica-medica .duck-character{font-size:65px}
+ #fisica-medica .lily{font-size:52px}
+ #fisica-medica .game-question{padding:15px}
+ #fisica-medica .game-heading h3{font-size:29px}
+}
+</style>
+
+<!-- PORTADA -->
+<header class="hero" id="inicio">
+ <div class="overline">REVISTA ACADÉMICA · BIOFÍSICA 2026</div>
+ <h1>FÍSICA MÉDICA</h1>
+ <p class="subtitle">Biofísica, ciencia y tecnología al servicio de la salud</p>
+ <p class="motto">“Comprender las leyes de la naturaleza también nos permite comprender los procesos que hacen posible la vida”.</p>
+ <span class="pill">BIOFÍSICA</span>
+ <span class="pill">FISIOLOGÍA</span>
+ <span class="pill">DIAGNÓSTICO MÉDICO</span>
+ <div class="overline" style="margin-top:18px">UNA MIRADA CIENTÍFICA AL CUERPO HUMANO</div>
+</header>
+
+<!-- MENÚ DE NAVEGACIÓN -->
+<nav class="menu" aria-label="Navegación de contenidos">
+ <a href="#bienvenida">Bienvenida</a>
+ <a href="#autora">Sobre mí</a>
+ <a href="#temario">Temario</a>
+ <a href="#introduccion">Introducción</a>
+ <a href="#biofisica">Biofísica</a>
+ <a href="#corazon">Corazón y ECG</a>
+ <a href="#hemodinamica">Hemodinámica</a>
+ <a href="#imagenes">Imágenes médicas</a>
+ <a href="#seguridad">Seguridad</a>
+ <a href="#reflexion">Reflexión</a>
+ <a href="#reto">Juego de patitos</a>
+ <a href="#bibliografia">Bibliografía</a>
+</nav>
+
+<!-- BIENVENIDA -->
+<section class="section" id="bienvenida">
+ <div class="kicker">01 · BIENVENIDA</div>
+ <h2>La medicina también habla el lenguaje de la física</h2>
+ <p class="lead">¿Alguna vez te has preguntado cómo puede una máquina registrar los latidos del corazón, observar un órgano sin realizar una incisión o medir la velocidad de la sangre dentro de una arteria?</p>
+ <p>Detrás de muchos procedimientos médicos existen principios físicos que hacen posible observar, medir y comprender lo que sucede dentro del organismo. La física no se limita a fórmulas escritas en una pizarra: también está presente en cada impulso nervioso, en la circulación sanguínea y en las tecnologías que ayudan a diagnosticar enfermedades.</p>
+ <p>Te doy la bienvenida a este recorrido por la Física en medicina. La intención de este espacio es explicar, de manera clara y visual, cómo los fenómenos físicos se relacionan con la vida y por qué la Biofísica es una herramienta fundamental para la formación médica.</p>
+ <div class="callout">
+  <strong>Una pregunta para iniciar:</strong> si el corazón genera actividad eléctrica, ¿cómo podemos detectar esa actividad desde la superficie de la piel? La respuesta nos llevará a conocer uno de los ejemplos más interesantes de la Biofísica: el electrocardiograma.
+ </div>
+ <p>Gracias por visitar este blog. Espero que al terminar la lectura no solamente conozcas nuevos conceptos, sino que puedas reconocer la física como una parte esencial de la medicina.</p>
+</section>
+
+<!-- AUTOBIOGRAFÍA -->
+<section class="section" id="autora">
+ <div class="kicker">02 · SOBRE LA AUTORA</div>
+ <h2>Conociendo a quien escribe</h2>
+ <div class="profile">
+  <img src="PEGA_AQUI_LA_URL_DE_TU_FOTO" alt="Fotografía de la autora">
+  <div class="profile-text">
+   <h3>Hola, soy [TU NOMBRE]</h3>
+   <p>Soy estudiante de Medicina y me encuentro en una etapa de aprendizaje en la que cada asignatura me permite comprender un poco más el funcionamiento del cuerpo humano. Me interesa conocer cómo los principios científicos se convierten en herramientas para estudiar, diagnosticar y cuidar la salud.</p>
+   <p>Este blog forma parte de mi trabajo en Biofísica. Lo elaboré con el propósito de organizar y compartir conocimientos sobre la relación entre la física y la medicina, dando especial importancia a los procesos biofísicos que ocurren en nuestro organismo.</p>
+   <p class="signature">[TU NOMBRE] · Estudiante de Medicina</p>
+  </div>
+ </div>
+</section>
+
+<!-- TEMARIO -->
+<section class="section" id="temario">
+ <div class="kicker">03 · CONTENIDO</div>
+ <h2>Ruta de aprendizaje</h2>
+ <p>Estos son los temas que recorreremos. Puedes seleccionar cualquiera desde el menú superior para ir directamente a esa sección.</p>
+ <div class="grid">
+  <div class="card blue"><span class="number">01</span><h3>Fundamentos de Biofísica</h3><p>La relación entre la física, los seres vivos y la medicina.</p></div>
+  <div class="card"><span class="number">02</span><h3>Bioelectricidad</h3><p>Potencial de membrana, iones y potencial de acción.</p></div>
+  <div class="card blue"><span class="number">03</span><h3>Electrofisiología cardíaca</h3><p>Conducción eléctrica del corazón y electrocardiograma.</p></div>
+  <div class="card"><span class="number">04</span><h3>Hemodinámica</h3><p>Presión, resistencia y flujo sanguíneo.</p></div>
+  <div class="card blue"><span class="number">05</span><h3>Diagnóstico por imágenes</h3><p>Rayos X, tomografía, ultrasonido y resonancia magnética.</p></div>
+  <div class="card"><span class="number">06</span><h3>Física y tratamiento</h3><p>Radioterapia, dosimetría y protección radiológica.</p></div>
+ </div>
+</section>
+
+<!-- INTRODUCCIÓN -->
+<section class="section" id="introduccion">
+ <div class="kicker">04 · INTRODUCCIÓN</div>
+ <h2>¿Qué es la Física Médica?</h2>
+ <p>La física estudia la materia, la energía, el movimiento y las interacciones que ocurren en la naturaleza. Cuando sus principios se aplican a la prevención, el diagnóstico y el tratamiento de enfermedades, forman parte del campo de la física médica.</p>
+ <p>La física médica integra conocimientos de física, biología, ingeniería y medicina. Tiene aplicaciones en el diagnóstico por imágenes, la radioterapia, la medicina nuclear, la dosimetría y la seguridad de los equipos utilizados en los servicios de salud.</p>
+ <p>Dentro de este campo, la Biofísica tiene un papel esencial porque permite explicar los fenómenos físicos que ocurren en los seres vivos: la electricidad de las células, la mecánica de los tejidos, el movimiento de los fluidos y el intercambio de energía.</p>
+ <div class="callout brown">
+  <strong>Idea central:</strong> la física médica estudia y aplica principios físicos en la práctica sanitaria; la Biofísica ayuda a comprender cómo esos principios se manifiestan en los sistemas biológicos.
+ </div>
+</section>
+
+<!-- BIOFÍSICA -->
+<section class="section" id="biofisica">
+ <div class="kicker">05 · EL FUNDAMENTO BIOLÓGICO</div>
+ <h2>Biofísica: cuando la física explica la vida</h2>
+ <p>La Biofísica utiliza conceptos y métodos de la física para estudiar los sistemas biológicos. Su importancia en Medicina consiste en explicar procesos que no siempre podemos observar directamente, pero que son indispensables para el funcionamiento del organismo.</p>
+
+ <h3>5.1 · Potencial de membrana: una diferencia eléctrica vital</h3>
+ <p>Las células mantienen una diferencia de potencial eléctrico entre el interior y el exterior de su membrana. Esta diferencia se origina por la distribución desigual de iones, la permeabilidad selectiva de la membrana y la actividad de proteínas transportadoras, como la bomba sodio-potasio.</p>
+ <p>En muchas neuronas, el potencial de membrana en reposo se encuentra aproximadamente alrededor de −70 mV, aunque el valor varía según el tipo celular. El interior es más negativo que el exterior en condiciones de reposo.</p>
+ <div class="grid">
+  <div class="card blue">
+   <h3>Na⁺ · Sodio</h3>
+   <p>Su concentración es mayor en el líquido extracelular. La entrada de sodio participa en la despolarización de muchas células excitables.</p>
+  </div>
+  <div class="card">
+   <h3>K⁺ · Potasio</h3>
+   <p>Su concentración es mayor dentro de la célula. Su salida participa de forma importante en la repolarización.</p>
+  </div>
+  <div class="card blue">
+   <h3>Ca²⁺ · Calcio</h3>
+   <p>Participa en la señalización celular y tiene un papel esencial en la contracción del músculo cardíaco.</p>
+  </div>
+ </div>
+ <p>La bomba sodio-potasio utiliza energía del ATP para transportar tres iones Na⁺ hacia el exterior y dos iones K⁺ hacia el interior. Así contribuye a mantener los gradientes iónicos necesarios para la actividad celular.</p>
+
+ <h3>5.2 · Potencial de acción: el lenguaje eléctrico de las células</h3>
+ <p>Cuando una célula excitable recibe un estímulo que alcanza el umbral, se produce un cambio rápido y temporal del potencial de membrana llamado potencial de acción.</p>
+ <ol class="topic-list">
+  <li><strong>Reposo:</strong> la membrana mantiene su potencial basal.</li>
+  <li><strong>Despolarización:</strong> se modifica el potencial; en muchas neuronas entra Na⁺ por canales dependientes de voltaje.</li>
+  <li><strong>Repolarización:</strong> la salida de K⁺ ayuda a que el potencial vuelva hacia valores negativos.</li>
+  <li><strong>Hiperpolarización:</strong> en algunas células, el potencial se vuelve transitoriamente más negativo que el valor de reposo.</li>
+ </ol>
+ <div class="callout">
+  <strong>Conexión clínica:</strong> la transmisión de señales nerviosas y la activación de las células musculares dependen de fenómenos eléctricos. Alteraciones en los gradientes iónicos pueden afectar la excitabilidad celular.
+ </div>
+
+ <h3>5.3 · Biomecánica: fuerzas y movimiento</h3>
+ <p>La biomecánica aplica los principios de la mecánica al cuerpo humano. Estudia las fuerzas que actúan sobre huesos, músculos y articulaciones, así como el movimiento, el equilibrio y la postura.</p>
+ <p>Por ejemplo, cuando flexionamos el codo, los músculos generan una fuerza que produce movimiento alrededor de la articulación. Los huesos pueden funcionar como palancas y las articulaciones como puntos de apoyo. Este conocimiento se utiliza en rehabilitación, fisioterapia, ortopedia y diseño de prótesis.</p>
+</section>
+
+<!-- CORAZÓN -->
+<section class="section" id="corazon">
+ <div class="kicker">06 · ELECTROFISIOLOGÍA CARDÍACA</div>
+ <h2>El corazón: una bomba con electricidad propia</h2>
+ <p>El corazón no se contrae de manera desordenada. Su actividad está coordinada por un sistema de conducción especializado que genera y distribuye impulsos eléctricos para sincronizar la contracción de sus cavidades.</p>
+ <h3>¿Cómo viaja el impulso eléctrico?</h3>
+ <ol class="topic-list">
+  <li><strong>Nodo sinoauricular:</strong> inicia normalmente el impulso cardíaco y funciona como marcapasos natural.</li>
+  <li><strong>Aurículas:</strong> el impulso se propaga por el tejido auricular y favorece su despolarización y contracción.</li>
+  <li><strong>Nodo auriculoventricular:</strong> produce un retraso fisiológico que permite completar el llenado ventricular.</li>
+  <li><strong>Haz de His y ramas:</strong> conducen el impulso hacia el sistema ventricular.</li>
+  <li><strong>Fibras de Purkinje:</strong> distribuyen rápidamente la señal por el miocardio ventricular.</li>
+ </ol>
+ <h3>El electrocardiograma: electricidad convertida en registro</h3>
+ <p>El electrocardiograma (ECG o EKG) registra diferencias de potencial eléctrico detectadas mediante electrodos colocados sobre la piel. No registra directamente la fuerza de contracción ni el movimiento de la sangre: registra la actividad eléctrica asociada al ciclo cardíaco.</p>
+ <div class="grid">
+  <div class="card blue"><h3>Onda P</h3><p>Representa la despolarización de las aurículas.</p></div>
+  <div class="card"><h3>Complejo QRS</h3><p>Representa la despolarización de los ventrículos. La repolarización auricular suele quedar oculta en este complejo.</p></div>
+  <div class="card blue"><h3>Onda T</h3><p>Representa la repolarización de los ventrículos.</p></div>
+ </div>
+ <div class="callout brown">
+  <strong>Dato que vale la pena recordar:</strong> el ECG permite estudiar frecuencia, ritmo, conducción y algunos cambios eléctricos que pueden orientar la evaluación de enfermedades cardíacas. Su interpretación siempre debe relacionarse con la situación clínica de la persona.
+ </div>
+</section>
+
+<!-- HEMODINÁMICA -->
+<section class="section" id="hemodinamica">
+ <div class="kicker">07 · FÍSICA DE LA CIRCULACIÓN</div>
+ <h2>Hemodinámica: la física detrás del flujo sanguíneo</h2>
+ <p>La hemodinámica estudia el movimiento de la sangre y las fuerzas que intervienen en la circulación. La sangre es un fluido que se desplaza por vasos de distintos calibres gracias a diferencias de presión generadas por la actividad del corazón.</p>
+ <h3>Presión, resistencia y flujo</h3>
+ <p>El flujo sanguíneo depende de la diferencia de presión entre dos puntos y de la resistencia que ofrece el sistema vascular. En términos generales, si la diferencia de presión aumenta y la resistencia se mantiene, el flujo tiende a aumentar.</p>
+ <div class="equation">Flujo (Q) = Diferencia de presión (ΔP) / Resistencia (R)</div>
+ <p>La relación es una forma sencilla de comprender la circulación. En el organismo real, la sangre es un fluido complejo y los vasos son elásticos, por lo que el comportamiento puede variar.</p>
+ <h3>¿Por qué importa el diámetro de los vasos?</h3>
+ <p>En un tubo rígido con flujo laminar, la ley de Poiseuille muestra que el radio tiene una influencia muy importante sobre la resistencia: en ese modelo, la resistencia es inversamente proporcional a la cuarta potencia del radio. Aunque los vasos sanguíneos no son tubos rígidos ideales, esta relación ayuda a entender por qué pequeños cambios en el calibre vascular pueden modificar considerablemente el flujo.</p>
+ <div class="equation">R ∝ 1 / r⁴ &nbsp; (modelo de Poiseuille)</div>
+ <div class="callout">
+  <strong>Aplicación médica:</strong> estos principios ayudan a comprender la presión arterial, la vasoconstricción, la vasodilatación y los cambios en la circulación que ocurren en diferentes condiciones fisiológicas y patológicas.
+ </div>
+ <h3>Viscosidad: ¿la sangre siempre fluye igual?</h3>
+ <p>La viscosidad expresa la resistencia interna de un fluido a fluir. En la sangre depende, entre otros factores, del hematocrito, la temperatura y las características de los componentes sanguíneos. Por eso, el flujo no depende únicamente de la presión: también importan las propiedades del fluido y del vaso.</p>
+</section>
+
+<!-- IMÁGENES MÉDICAS -->
+<section class="section" id="imagenes">
+ <div class="kicker">08 · TECNOLOGÍA DE DIAGNÓSTICO</div>
+ <h2>Ver el interior del cuerpo: física convertida en imágenes</h2>
+ <p>Una de las contribuciones más sorprendentes de la física a la medicina es la posibilidad de obtener información del interior del cuerpo sin necesidad de observar directamente los órganos. Cada técnica utiliza un principio físico diferente.</p>
+
+ <h3>8.1 · Radiografía: imágenes con rayos X</h3>
+ <p>Los rayos X son radiación electromagnética ionizante. Al atravesar el cuerpo, una parte de la radiación es absorbida o dispersada y otra llega al detector. Como los tejidos atenúan los rayos X en distinta medida, se forma una imagen con diferentes niveles de intensidad.</p>
+ <p>Los huesos suelen verse claros porque atenúan más los rayos X que muchos tejidos blandos. La radiografía es útil, por ejemplo, para evaluar fracturas y determinadas alteraciones del tórax.</p>
+
+ <h3>8.2 · Tomografía computarizada: imágenes en cortes</h3>
+ <p>La tomografía computarizada (TC) utiliza rayos X y detectores que obtienen múltiples proyecciones desde distintos ángulos. Un sistema computacional procesa esos datos para reconstruir imágenes en cortes del cuerpo y, en determinadas condiciones, representaciones tridimensionales.</p>
+ <p>Su ventaja es que permite estudiar estructuras internas con mayor detalle espacial que una radiografía convencional en muchas situaciones clínicas. Como utiliza rayos X, implica exposición a radiación ionizante.</p>
+
+ <h3>8.3 · Ultrasonido: escuchar los ecos del cuerpo</h3>
+ <p>El ultrasonido diagnóstico utiliza ondas sonoras de alta frecuencia. El transductor emite ondas que viajan por los tejidos y recibe los ecos que regresan desde las interfaces entre estructuras con propiedades acústicas diferentes.</p>
+ <p>El equipo calcula distancias utilizando el tiempo de retorno de los ecos y la velocidad del sonido en los tejidos para construir una imagen. El gel facilita el contacto acústico entre el transductor y la piel.</p>
+ <div class="callout">
+  <strong>El efecto Doppler:</strong> cuando las ondas sonoras se reflejan en estructuras que se mueven, como los glóbulos rojos, la frecuencia del eco puede cambiar. El Doppler utiliza ese cambio para estimar la dirección y la velocidad del flujo sanguíneo.
+ </div>
+ <p>Por eso, el ultrasonido Doppler permite estudiar el flujo en vasos sanguíneos y evaluar aspectos de la circulación sin utilizar radiación ionizante.</p>
+
+ <h3>8.4 · Resonancia magnética: el poder del magnetismo</h3>
+ <p>La resonancia magnética (RM) utiliza un campo magnético intenso, gradientes magnéticos y pulsos de radiofrecuencia. La técnica aprovecha las propiedades magnéticas de ciertos núcleos atómicos, especialmente los protones del hidrógeno, abundantes en el cuerpo humano.</p>
+ <p>Después de la estimulación por radiofrecuencia, las señales emitidas durante la relajación de los protones son detectadas y procesadas para formar imágenes. La RM ofrece gran contraste de tejidos blandos y no utiliza radiación ionizante.</p>
+
+ <h3>Comparación rápida</h3>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Técnica</th><th>Principio físico</th><th>¿Usa radiación ionizante?</th></tr></thead>
+   <tbody>
+    <tr><td>Radiografía</td><td>Rayos X</td><td>Sí</td></tr>
+    <tr><td>Tomografía</td><td>Rayos X y reconstrucción computacional</td><td>Sí</td></tr>
+    <tr><td>Ultrasonido</td><td>Ondas sonoras y ecos</td><td>No</td></tr>
+    <tr><td>Resonancia magnética</td><td>Campo magnético y radiofrecuencia</td><td>No</td></tr>
+   </tbody>
+  </table>
+ </div>
+ <p class="small">La elección de una técnica depende de la pregunta clínica, la región anatómica, las características del paciente y la valoración del personal sanitario.</p>
+</section>
+
+<!-- SEGURIDAD -->
+<section class="section" id="seguridad">
+ <div class="kicker">09 · FÍSICA PARA PROTEGER</div>
+ <h2>Dosimetría y protección radiológica</h2>
+ <p>La física médica no solamente permite obtener imágenes: también ayuda a que los procedimientos con radiación se realicen con calidad y seguridad. Para ello se utilizan conceptos de dosimetría, control de calidad y protección radiológica.</p>
+ <h3>¿Qué es la dosis absorbida?</h3>
+ <p>La dosis absorbida expresa la energía depositada por la radiación ionizante por unidad de masa del material. Su unidad en el Sistema Internacional es el gray (Gy), equivalente a un joule por kilogramo.</p>
+ <div class="equation">1 Gy = 1 J/kg</div>
+ <p>La dosis equivalente y la dosis efectiva se expresan en sievert (Sv) y consideran factores relacionados con el tipo de radiación y, en el caso de la dosis efectiva, la sensibilidad de los tejidos. Son magnitudes distintas y no deben confundirse con la dosis absorbida.</p>
+ <h3>¿Por qué se controla la exposición?</h3>
+ <p>La radiación ionizante puede transferir energía a los tejidos y producir efectos biológicos. Por eso, los procedimientos deben estar justificados y optimizados: se busca obtener la información diagnóstica necesaria utilizando una exposición apropiada para cada situación.</p>
+ <div class="grid">
+  <div class="card blue"><h3>Justificación</h3><p>El estudio debe aportar un beneficio clínico que compense la exposición.</p></div>
+  <div class="card"><h3>Optimización</h3><p>La exposición debe mantenerse tan baja como sea razonablemente posible, sin perder la calidad necesaria.</p></div>
+  <div class="card blue"><h3>Control de calidad</h3><p>Los equipos deben evaluarse para comprobar que funcionan de manera adecuada.</p></div>
+ </div>
+ <div class="callout brown">
+  <strong>Un punto esencial:</strong> la protección radiológica no significa evitar toda radiación a cualquier costo; significa utilizarla de forma responsable, justificada y optimizada cuando existe una indicación médica.
+ </div>
+</section>
+
+<!-- REFLEXIÓN -->
+<section class="section" id="reflexion">
+ <div class="kicker">10 · REFLEXIÓN DE APRENDIZAJE</div>
+ <h2>Lo que comprendí a través de la Biofísica</h2>
+ <p>Al estudiar la relación entre la física y la medicina comprendí que muchos procesos del cuerpo humano pueden explicarse mediante principios físicos. La actividad eléctrica de las células, la contracción del corazón, la circulación de la sangre y el movimiento de las articulaciones son ejemplos de fenómenos que ocurren constantemente en nuestro organismo.</p>
+ <p>Uno de los temas que más me llamó la atención fue la bioelectricidad, porque permite entender cómo el movimiento de los iones genera cambios eléctricos que hacen posible la comunicación entre las células. También me pareció interesante conocer cómo esa actividad puede registrarse mediante un electrocardiograma.</p>
+ <p>Además, aprendí que tecnologías como la tomografía, el ultrasonido y la resonancia magnética no producen imágenes de la misma manera: cada una utiliza principios físicos distintos. Comprender esas diferencias me permite valorar la importancia de la física en el diagnóstico y en la seguridad de los pacientes.</p>
+ <p>Como estudiante de Medicina, considero que estos conocimientos fortalecen mi formación porque me ayudan a no limitarme a memorizar procedimientos, sino a comprender por qué funcionan. La Biofísica demuestra que la ciencia y la medicina trabajan juntas para explicar la vida y mejorar la atención de la salud.</p>
+ <div class="callout">
+  <strong>Mi conclusión:</strong> estudiar física también es aprender a mirar el cuerpo humano desde otra perspectiva: entender sus señales, sus movimientos y las herramientas que nos permiten cuidarlo.
+ </div>
+</section>
+
+<!-- JUEGO INTERACTIVO DE PATITOS -->
+<section class="section" id="reto">
+ <div class="kicker">11 · DESAFÍO INTERACTIVO</div>
+ <h2>La aventura de los patitos</h2>
+
+ <p class="lead">¡Un pequeño patito necesita tu ayuda para cruzar el lago de la Biofísica!</p>
+
+ <p>Responde correctamente las cuatro preguntas para ayudarlo a llegar al otro lado. Cada respuesta correcta te dará una estrella. Pero cuidado: si te equivocas, nuestro amiguito terminará dándose un chapuzón. 🦆</p>
+
+ <div class="game-instructions">
+  <strong>🌷 ¿Cómo jugar?</strong><br>
+  ⭐ Respuesta correcta = ganas una estrella.<br>
+  💦 Respuesta incorrecta = el patito cae al agua.<br>
+  🏆 Consigue las cuatro estrellas para convertirte en la protectora del lago.
+ </div>
+
+ <div class="duck-game" id="duck-game">
+
+  <div class="game-heading">
+   <div class="kicker">EL PEQUEÑO LAGO DE LA CIENCIA</div>
+   <h3>¡Salvemos al patito!</h3>
+   <p>Cuatro rondas, cuatro oportunidades y muchas estrellas.</p>
+  </div>
+
+  <div class="game-scoreboard">
+   <div class="game-stat" id="round-counter">RONDA 1 DE 4</div>
+   <div class="game-stat stars-display" id="star-counter">⭐ 0 / 4</div>
+  </div>
+
+  <div class="game-progress">
+   <div class="game-progress-fill" id="game-progress-fill"></div>
+  </div>
+
+  <!-- ESCENARIO DEL LAGO -->
+  <div class="lake" id="lake">
+   <div class="lake-sky">✦ EL LAGO DE LA BIOFÍSICA ✦</div>
+
+   <div class="cloud one">☁️</div>
+   <div class="cloud two">☁️</div>
+
+   <div class="lily left">🪷</div>
+   <div class="lily right">🪷</div>
+
+   <div class="duck-message" id="duck-message">
+    ¡Hola! ¿Me ayudas a cruzar? 💗
+   </div>
+
+   <div class="duck-character" id="duck-character">🦆</div>
+
+   <div class="duck-splash" id="duck-splash">💦</div>
+
+   <div class="water-wave"></div>
+   <div class="water-wave two"></div>
+  </div>
+
+  <!-- PREGUNTAS -->
+  <div class="game-question" id="game-question">
+
+   <span class="round-label" id="round-label">PRIMERA RONDA</span>
+
+   <h3 id="question-text">
+    ¿Qué mantiene principalmente el potencial de membrana de una célula?
+   </h3>
+
+   <div class="duck-options" id="duck-options">
+
+    <button type="button" class="duck-option" data-choice="a">
+     A. La ausencia total de iones.
+    </button>
+
+    <button type="button" class="duck-option" data-choice="b">
+     B. La distribución desigual de iones y la permeabilidad selectiva de la membrana.
+    </button>
+
+    <button type="button" class="duck-option" data-choice="c">
+     C. Únicamente la temperatura corporal.
+    </button>
+
+   </div>
+
+   <div class="duck-feedback" id="duck-feedback" aria-live="polite">
+    Elige tu respuesta con cuidado. ¡El patito confía en ti!
+   </div>
+
+  </div>
+
+  <div class="game-controls">
+   <button type="button" class="game-button" id="next-round" disabled>
+    Siguiente ronda →
+   </button>
+
+   <button type="button" class="game-button secondary" id="restart-game">
+    ↻ Reiniciar juego
+   </button>
+  </div>
+
+  <!-- RESULTADO FINAL -->
+  <div class="game-result" id="game-result" aria-live="polite">
+
+   <div class="result-ducks">🦆 🦆 🦆</div>
+
+   <div class="result-title" id="result-title">
+    ¡Aventura completada!
+   </div>
+
+   <div class="result-stars" id="result-stars">
+    ⭐⭐⭐⭐
+   </div>
+
+   <h3 id="result-score">Conseguiste 4 de 4 estrellas.</h3>
+
+   <p id="result-message">
+    ¡El patito llegó feliz al otro lado del lago!
+   </p>
+
+   <p style="font-size:14px">
+    Gracias por jugar y aprender Biofísica. 💗
+   </p>
+
+   <button type="button" class="game-button" id="play-again">
+    🦆 Jugar nuevamente
+   </button>
+
+  </div>
+
+ </div>
+
+ <p class="small" style="text-align:center;margin-top:18px">
+  Un pequeño juego para recordar que aprender también puede ser divertido. 🌷
+ </p>
+
+</section>
+
+<!-- BIBLIOGRAFÍA -->
+<section class="section" id="bibliografia">
+ <div class="kicker">12 · REFERENCIAS</div>
+ <h2>Bibliografía</h2>
+ <p>Fuentes académicas e institucionales consultadas para desarrollar los conceptos de Biofísica, electrofisiología, diagnóstico por imágenes y física médica.</p>
+ <ol class="references">
+  <li>
+   American Association of Physicists in Medicine. (2022). <i>Answers to top questions on medical imaging.</i>
+   <a href="https://www.aapm.org/pubs/reports/AAPMRadiationandMedicalImagingCommunicationGuide.pdf" target="_blank" rel="noopener">Consultar documento</a>.
+  </li>
+  <li>
+   American Association of Physicists in Medicine. (2022). <i>Academic program recommendations for graduate degrees in medical physics: AAPM Report No. 365.</i>
+   <a href="https://aapm.onlinelibrary.wiley.com/doi/10.1002/acm2.13792" target="_blank" rel="noopener">Consultar publicación</a>.
+  </li>
+  <li>
+   Betts, J. G., et al. (2022). <i>Anatomy and Physiology 2e: The action potential.</i> OpenStax.
+   <a href="https://openstax.org/books/anatomy-and-physiology/pages/12-4-the-action-potential" target="_blank" rel="noopener">Consultar capítulo</a>.
+  </li>
+  <li>
+   Betts, J. G., et al. (2022). <i>Anatomy and Physiology 2e: Cardiac muscle and electrical activity.</i> OpenStax.
+   <a href="https://openstax.org/books/anatomy-and-physiology-2e/pages/19-2-cardiac-muscle-and-electrical-activity" target="_blank" rel="noopener">Consultar capítulo</a>.
+  </li>
+  <li>
+   National Heart, Lung, and Blood Institute. (s. f.). <i>Síndrome de QT largo.</i> National Institutes of Health.
+   <a href="https://www.nhlbi.nih.gov/es/salud/sindrome-de-qt-largo" target="_blank" rel="noopener">Consultar recurso</a>.
+  </li>
+  <li>
+   National Institute of Biomedical Imaging and Bioengineering. (s. f.). <i>Medical X-rays.</i> National Institutes of Health.
+   <a href="https://www.nibib.nih.gov/science-education/science-topics/medical-x-rays" target="_blank" rel="noopener">Consultar recurso</a>.
+  </li>
+  <li>
+   National Institute of Biomedical Imaging and Bioengineering. (s. f.). <i>Ultrasound.</i> National Institutes of Health.
+   <a href="https://www.nibib.nih.gov/science-education/science-topics/ultrasound" target="_blank" rel="noopener">Consultar recurso</a>.
+  </li>
+  <li>
+   Al-Naser, Y. A., & Tafti, D. (2026). <i>Magnetic resonance imaging (MRI) safety and biological effects.</i> StatPearls. National Library of Medicine.
+   <a href="https://www.ncbi.nlm.nih.gov/books/NBK604477/" target="_blank" rel="noopener">Consultar recurso</a>.
+  </li>
+ </ol>
+</section>
+
+<!-- CIERRE -->
+<footer class="footer">
+ <strong>FÍSICA MÉDICA</strong>
+ <p>Biofísica · Ciencia · Tecnología · Salud</p>
+ <p>Gracias por leer, aprender y descubrir conmigo.</p>
+ <p class="small">Trabajo académico · Biofísica 2026</p>
+ <a class="backtop" href="#inicio">↑ Volver al inicio</a>
+</footer>
+
+</div>
+
+<script>
+(function(){
+
+ function iniciarFisicaMedica(){
+
+  var root=document.getElementById('fisica-medica');
+
+  if(!root || root.getAttribute('data-ready')==='yes') return;
+
+  root.setAttribute('data-ready','yes');
+
+  /* NAVEGACIÓN INTERNA */
+
+  var links=root.querySelectorAll('.menu a, .backtop');
+
+  links.forEach(function(link){
+
+   link.addEventListener('click',function(event){
+
+    var destino=link.getAttribute('href');
+
+    if(destino && destino.charAt(0)==='#'){
+
+     var target=root.querySelector(destino);
+
+     if(target){
+
+      event.preventDefault();
+
+      target.scrollIntoView({
+       behavior:'smooth',
+       block:'start'
+      });
+
+      if(history.replaceState){
+       history.replaceState(null,'',destino);
+      }
+
+     }
+
+    }
+
+   });
+
+  });
+
+  /* =================================
+     CONFIGURACIÓN DEL JUEGO
+  ================================= */
+
+  var rounds=[
+
+   {
+    label:'PRIMERA RONDA',
+    question:'¿Qué mantiene principalmente el potencial de membrana de una célula?',
+    options:[
+     'A. La ausencia total de iones.',
+     'B. La distribución desigual de iones y la permeabilidad selectiva de la membrana.',
+     'C. Únicamente la temperatura corporal.'
+    ],
+    answer:'b',
+    explanation:'¡Correcto! La distribución desigual de iones y la permeabilidad selectiva de la membrana permiten mantener el potencial de membrana.'
+   },
+
+   {
+    label:'SEGUNDA RONDA',
+    question:'¿Qué representa el complejo QRS en un electrocardiograma?',
+    options:[
+     'A. La despolarización ventricular.',
+     'B. La despolarización auricular.',
+     'C. La repolarización ventricular.'
+    ],
+    answer:'a',
+    explanation:'¡Excelente! El complejo QRS representa la despolarización de los ventrículos.'
+   },
+
+   {
+    label:'TERCERA RONDA',
+    question:'¿Qué fenómeno utiliza el ultrasonido Doppler para estudiar el flujo sanguíneo?',
+    options:[
+     'A. La ionización de los tejidos.',
+     'B. La desintegración radiactiva.',
+     'C. El cambio de frecuencia de las ondas reflejadas por estructuras en movimiento.'
+    ],
+    answer:'c',
+    explanation:'¡Muy bien! El efecto Doppler permite estudiar el movimiento de la sangre a través de los cambios de frecuencia de las ondas reflejadas.'
+   },
+
+   {
+    label:'CUARTA RONDA',
+    question:'¿Cuál es la unidad de medida de la dosis absorbida de radiación?',
+    options:[
+     'A. Sievert (Sv).',
+     'B. Gray (Gy).',
+     'C. Tesla (T).'
+    ],
+    answer:'b',
+    explanation:'¡Lo lograste! El gray es la unidad de dosis absorbida y equivale a un joule por kilogramo.'
+   }
+
+  ];
+
+  var currentRound=0;
+  var stars=0;
+  var answered=false;
+  var gameFinished=false;
+
+  /* ELEMENTOS */
+
+  var roundCounter=root.querySelector('#round-counter');
+  var starCounter=root.querySelector('#star-counter');
+  var progress=root.querySelector('#game-progress-fill');
+
+  var duck=root.querySelector('#duck-character');
+  var splash=root.querySelector('#duck-splash');
+  var duckMessage=root.querySelector('#duck-message');
+
+  var roundLabel=root.querySelector('#round-label');
+  var questionText=root.querySelector('#question-text');
+  var optionsArea=root.querySelector('#duck-options');
+  var feedback=root.querySelector('#duck-feedback');
+
+  var nextButton=root.querySelector('#next-round');
+  var restartButton=root.querySelector('#restart-game');
+  var resultBox=root.querySelector('#game-result');
+
+  var resultTitle=root.querySelector('#result-title');
+  var resultStars=root.querySelector('#result-stars');
+  var resultScore=root.querySelector('#result-score');
+  var resultMessage=root.querySelector('#result-message');
+
+  /* ACTUALIZAR PUNTUACIÓN */
+
+  function updateScore(){
+
+   starCounter.textContent='⭐ '+stars+' / 4';
+
+   roundCounter.textContent='RONDA '+(currentRound+1)+' DE 4';
+
+   progress.style.width=(currentRound/4*100)+'%';
+
+  }
+
+  /* CARGAR RONDA */
+
+  function loadRound(){
+
+   answered=false;
+
+   var round=rounds[currentRound];
+
+   roundLabel.textContent=round.label;
+
+   questionText.textContent=round.question;
+
+   feedback.textContent='Elige tu respuesta con cuidado. ¡El patito confía en ti!';
+
+   feedback.className='duck-feedback';
+
+   nextButton.disabled=true;
+
+   nextButton.textContent=currentRound===3
+    ?'Ver resultado final 🏆'
+    :'Siguiente ronda →';
+
+   duck.className='duck-character';
+
+   duck.textContent='🦆';
+
+   duck.style.opacity='1';
+
+   splash.className='duck-splash';
+
+   duckMessage.textContent='¡Vamos a intentarlo! 💗';
+
+   optionsArea.innerHTML='';
+
+   round.options.forEach(function(option,index){
+
+    var button=document.createElement('button');
+
+    button.type='button';
+
+    button.className='duck-option';
+
+    button.setAttribute('data-choice',['a','b','c'][index]);
+
+    button.textContent=option;
+
+    optionsArea.appendChild(button);
+
+    button.addEventListener('click',function(){
+
+     chooseAnswer(button);
+
+    });
+
+   });
+
+   updateScore();
+
+  }
+
+  /* RESPONDER */
+
+  function chooseAnswer(button){
+
+   if(answered || gameFinished) return;
+
+   answered=true;
+
+   var selected=button.getAttribute('data-choice');
+
+   var correct=rounds[currentRound].answer;
+
+   var buttons=optionsArea.querySelectorAll('.duck-option');
+
+   buttons.forEach(function(btn){
+
+    btn.disabled=true;
+
+   });
+
+   if(selected===correct){
+
+    /* RESPUESTA CORRECTA */
+
+    stars++;
+
+    button.classList.add('right');
+
+    duck.classList.add('winner');
+
+    duck.textContent='🦆';
+
+    duckMessage.textContent='¡SÍÍÍ! ¡LO CONSEGUIMOS!';
+
+    feedback.textContent='⭐ '+rounds[currentRound].explanation;
+
+    feedback.classList.add('success');
+
+    starCounter.textContent='⭐ '+stars+' / 4';
+
+    splash.className='duck-splash';
+
+   }else{
+
+    /* RESPUESTA INCORRECTA */
+
+    button.classList.add('wrong');
+
+    buttons.forEach(function(btn){
+
+     if(btn.getAttribute('data-choice')===correct){
+
+      btn.classList.add('right');
+
+     }
+
+    });
+
+    duckMessage.textContent='¡UPS! ¡AL AGUA!';
+
+    feedback.textContent='💦 ¡Oh, no! El patito se cayó al lago. La respuesta correcta era: '+rounds[currentRound].options[
+     ['a','b','c'].indexOf(correct)
+    ];
+
+    feedback.classList.add('error');
+
+    duck.classList.add('falling');
+
+    setTimeout(function(){
+
+     duck.textContent='🦆';
+
+     splash.classList.add('show');
+
+    },750);
+
+   }
+
+   nextButton.disabled=false;
+
+   updateScore();
+
+  }
+
+  /* SIGUIENTE RONDA */
+
+  nextButton.addEventListener('click',function(){
+
+   if(!answered || gameFinished) return;
+
+   if(currentRound<3){
+
+    currentRound++;
+
+    loadRound();
+
+   }else{
+
+    finishGame();
+
+   }
+
+  });
+
+  /* RESULTADO FINAL */
+
+  function finishGame(){
+
+   gameFinished=true;
+
+   progress.style.width='100%';
+
+   resultBox.classList.add('show');
+
+   if(stars===4){
+
+    resultTitle.textContent='¡REINA DEL LAGO!';
+
+    resultStars.textContent='⭐⭐⭐⭐';
+
+    resultMessage.textContent='¡Increíble! Conseguíste todas las estrellas y ayudaste al patito a cruzar el lago sin perderse. ¡Dominas la Biofísica! 🦆💗';
+
+   }else if(stars===3){
+
+    resultTitle.textContent='¡CASI PERFECTO!';
+
+    resultStars.textContent='⭐⭐⭐☆';
+
+    resultMessage.textContent='¡Qué buena aventura! El patito está orgulloso de ti. Solo hubo un pequeño chapuzón. ¡Estuviste muy cerca!';
+
+   }else if(stars===2){
+
+    resultTitle.textContent='¡AVENTURERA DEL LAGO!';
+
+    resultStars.textContent='⭐⭐☆☆';
+
+    resultMessage.textContent='¡Lo importante es seguir aprendiendo! Conseguíste dos estrellas y ahora tienes nuevos conocimientos para intentarlo otra vez.';
+
+   }else if(stars===1){
+
+    resultTitle.textContent='¡PRIMERAS ESTRELLAS!';
+
+    resultStars.textContent='⭐☆☆☆';
+
+    resultMessage.textContent='El patito y tú todavía tienen mucho por descubrir. ¡Repasa los temas y vuelvan a intentarlo!';
+
+   }else{
+
+    resultTitle.textContent='¡HORA DE VOLVER A INTENTARLO!';
+
+    resultStars.textContent='☆☆☆☆';
+
+    resultMessage.textContent='Esta aventura fue un poquito complicada, pero no pasa nada. Repasa tu revista y vuelve al lago. ¡La próxima puede ser diferente!';
+
+   }
+
+   resultScore.textContent='Conseguiste '+stars+' de 4 estrellas.';
+
+   duckMessage.textContent='¡AVENTURA TERMINADA!';
+
+   duck.className='duck-character winner';
+
+   duck.textContent='🦆';
+
+   duck.style.opacity='1';
+
+   root.querySelector('#game-question').style.display='none';
+
+   nextButton.style.display='none';
+
+   resultBox.scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+   });
+
+  }
+
+  /* REINICIAR JUEGO */
+
+  function restartGame(){
+
+   currentRound=0;
+
+   stars=0;
+
+   answered=false;
+
+   gameFinished=false;
+
+   resultBox.classList.remove('show');
+
+   root.querySelector('#game-question').style.display='block';
+
+   nextButton.style.display='inline-block';
+
+   loadRound();
+
+   duckMessage.textContent='¡Hola! ¿Me ayudas a cruzar? 💗';
+
+   root.querySelector('#duck-game').scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+   });
+
+  }
+
+  restartButton.addEventListener('click',restartGame);
+
+  root.querySelector('#play-again').addEventListener('click',restartGame);
+
+  /* INICIAR */
+
+  loadRound();
+
+ }
+
+ if(document.readyState==='loading'){
+
+  document.addEventListener('DOMContentLoaded',iniciarFisicaMedica);
+
+ }else{
+
+  iniciarFisicaMedica();
+
+ }
+
+})();
+</script>
